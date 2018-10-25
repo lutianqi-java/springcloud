@@ -1,0 +1,28 @@
+info:
+  name: Eureka server
+  contract: 学习springCloud
+spring:
+  profiles:
+    active: dev
+---
+spring:
+  profiles:dev
+server:
+  port: 8761
+
+
+
+
+
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    serviceUrl:
+      defaultZone: http://127.0.0.1:8761/eureka/
+  server:
+    waitTimeInMsWhenSyncEmpty: 0
+    # false 关闭自我保护，不管如何都要剔除心跳检测异常的服务
+    enableSelfPreservation: true
+  instance:
+    hostname: eureka1
