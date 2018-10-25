@@ -1,0 +1,16 @@
+info:
+  name: manager
+  contract: 学习springCloud
+server:
+  port: 8763
+# 配置eureka
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://127.0.0.1:8761/eureka/
+# 开启熔断机制,不然不会生效fallback = FeignSmsMvcClientFailback.class
+feign:
+  hystrix:
+    enabled: true
