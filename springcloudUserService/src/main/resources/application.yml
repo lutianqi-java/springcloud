@@ -2,7 +2,7 @@ info:
   name: userService
   contract: 学习springCloud
 server:
-  port: 8762
+  port: 8765
 # 配置eureka
 eureka:
   client:

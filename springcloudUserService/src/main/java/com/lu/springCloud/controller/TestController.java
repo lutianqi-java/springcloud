@@ -12,6 +12,7 @@ public class TestController {
 
     @RequestMapping(value = "index")
     public Map<String, Object> index() {
+        System.out.println("调用接口");
         Map<String, Object> map = new HashMap<String, Object>();
         map.put("test", "1111");
         return map;
