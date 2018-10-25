@@ -4,6 +4,7 @@ info:
 server:
   port: 8763
 # 配置eureka
+
 eureka:
   client:
     registerWithEureka: true
