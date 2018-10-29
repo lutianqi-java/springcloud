@@ -1,5 +1,6 @@
 package com.study.study1.common;
 
+import org.springframework.context.annotation.Configuration;
 import org.springframework.format.FormatterRegistry;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.validation.MessageCodesResolver;
@@ -11,6 +12,7 @@ import org.springframework.web.servlet.config.annotation.*;
 
 import java.util.List;
 
+@Configuration
 public class MvcConfigurer implements WebMvcConfigurer {
 
     @Override
@@ -38,9 +40,13 @@ public class MvcConfigurer implements WebMvcConfigurer {
 
     }
 
+    /**
+     * 通过addInterceptors方法可以设置多个拦截器，比如对特定的url设置拦截器以检查用户是否登陆
+     * @param registry
+     */
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-
+        registry.addInterceptor(new SessionHandlerInterceptor()).addPathPatterns("/admin/**");
     }
 
     @Override
@@ -48,6 +54,10 @@ public class MvcConfigurer implements WebMvcConfigurer {
 
     }
 
+    /**
+     * 跨域访问的设置
+     * @param registry
+     */
     @Override
     public void addCorsMappings(CorsRegistry registry) {
 
