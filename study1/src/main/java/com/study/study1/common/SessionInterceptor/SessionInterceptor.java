@@ -1,4 +1,4 @@
-package com.study.study1.common;
+package com.study.study1.common.SessionInterceptor;
 
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
