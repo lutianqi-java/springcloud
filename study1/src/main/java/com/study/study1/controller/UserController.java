@@ -1,6 +1,6 @@
 package com.study.study1.controller;
 
-import com.study.study1.dao.UserDao;
+import com.study.study1.dao.UserJpa;
 import com.study.study1.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,7 +13,7 @@ import java.util.List;
 public class UserController {
 
     @Autowired
-    UserDao userDao;
+    UserJpa userDao;
 
     @RequestMapping("findAll")
     public List<User> findAll() {
