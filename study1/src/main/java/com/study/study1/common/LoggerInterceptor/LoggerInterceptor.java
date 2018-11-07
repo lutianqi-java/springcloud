@@ -13,6 +13,9 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+/**
+ * 请求日志
+ */
 public class LoggerInterceptor implements HandlerInterceptor {
 
     //请求开始时间标识

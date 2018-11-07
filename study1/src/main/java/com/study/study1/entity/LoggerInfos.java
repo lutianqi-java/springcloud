@@ -11,8 +11,7 @@ public class LoggerInfos {
 
     @Id
     @Column(name = "id")
-    @GeneratedValue(generator = "system-uuid")
-    @GenericGenerator(name = "system-uuid", strategy = "uuid")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String id;
 
     //客户端请求ip
