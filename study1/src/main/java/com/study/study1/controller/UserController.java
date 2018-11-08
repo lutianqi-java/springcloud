@@ -40,5 +40,10 @@ public class UserController {
         return userDao.save(user);
     }
 
+    @RequestMapping("selectById")
+    public User selectById(String id) throws InterruptedException {
+        return userService.selectById(id);
+    }
+
 
 }

@@ -60,4 +60,5 @@ spring:
 #  spring.freemarker.request-context-attribute=request
 #  spring.freemarker.suffix=.ftl
 
-
+mybatis:
+  mapper-locations: classpath*:/mapper/**Mapper.xml
