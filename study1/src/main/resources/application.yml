@@ -34,14 +34,30 @@ spring:
     test-connection: true
     username: 1179555783@qq.com
   redis:
-    host:
+    host: 192.168.237.128
     port: 6379
-    password:
+    password: test@2018
     jedis:
       pool:
         max-active: 20
         min-idle: 1
         max-idle: 1
     database: 0
+
+
+
+##    freemarker静态资源配置
+#
+##       设定ftl文件路径
+#  spring.freemarker.tempalte-loader-path=classpath:/templates
+#  #        关闭缓存，及时刷新，上线生产环境需要修改为true
+#  spring.freemarker.cache=false
+#  spring.freemarker.charset=UTF-8
+#  spring.freemarker.check-template-location=true
+#  spring.freemarker.content-type=text/html
+#  spring.freemarker.expose-request-attributes=true
+#  spring.freemarker.expose-session-attributes=true
+#  spring.freemarker.request-context-attribute=request
+#  spring.freemarker.suffix=.ftl
 
 

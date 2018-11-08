@@ -2,6 +2,7 @@ package com.study.study1.controller;
 
 import com.study.study1.dao.UserJpa;
 import com.study.study1.entity.User;
+import com.study.study1.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,9 +20,12 @@ public class UserController {
     @Autowired
     UserJpa userDao;
 
+    @Autowired
+    UserService userService;
+
     @RequestMapping("findAll")
-    public List<User> findAll() {
-        return userDao.findAll();
+    public List<User> findAll() throws InterruptedException {
+        return userService.findAll();
     }
 
     @RequestMapping("save")
@@ -35,5 +39,6 @@ public class UserController {
         user.setName("测试姓名");
         return userDao.save(user);
     }
+
 
 }

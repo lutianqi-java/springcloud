@@ -80,7 +80,7 @@ public class LoggerInterceptor implements HandlerInterceptor {
                 SerializerFeature.WriteMapNullValue));
         //执行将日志写入数据库
         LoggerJpa loggerDAO = getDAO(LoggerJpa.class, request);
-        loggerDAO.save(loggerEntity);
+//        loggerDAO.save(loggerEntity);
     }
 
     private <T> T getDAO(Class<T> clazz, HttpServletRequest request) {
