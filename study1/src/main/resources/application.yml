@@ -18,12 +18,18 @@ spring:
     testOnBorrow: false
     testOnReturn: false
     filters: stat, wall, log4j
-  jpa:
-    database: MySQL
-    show-sql: true
-    hibernate:
-      naming_strategy: org.hibernate.cfg.ImprovedNamingStrategy
-
+    test1:
+      type: com.alibaba.druid.pool.DruidDataSource
+      url: jdbc:mysql://127.0.0.1:3306/test1?characterEncoding=utf8&useSSL=false
+      driverClassName: com.mysql.jdbc.Driver
+      username: root
+      password: 123456
+    test2:
+      type: com.alibaba.druid.pool.DruidDataSource
+      url: jdbc:mysql://127.0.0.1:3306/test2?characterEncoding=utf8&useSSL=false
+      driverClassName: com.mysql.jdbc.Driver
+      username: root
+      password: 123456
   mail:
     default-encoding: UTF-8
     host: smtp.qq.com
@@ -43,22 +49,7 @@ spring:
         min-idle: 1
         max-idle: 1
     database: 0
-
-
-
-##    freemarker静态资源配置
-#
-##       设定ftl文件路径
-#  spring.freemarker.tempalte-loader-path=classpath:/templates
-#  #        关闭缓存，及时刷新，上线生产环境需要修改为true
-#  spring.freemarker.cache=false
-#  spring.freemarker.charset=UTF-8
-#  spring.freemarker.check-template-location=true
-#  spring.freemarker.content-type=text/html
-#  spring.freemarker.expose-request-attributes=true
-#  spring.freemarker.expose-session-attributes=true
-#  spring.freemarker.request-context-attribute=request
-#  spring.freemarker.suffix=.ftl
-
 mybatis:
-  mapper-locations: classpath*:/mapper/**Mapper.xml
+  mapper-locations: classpath*:/mapper/test/**Mapper.xml
+server:
+  port: 9090
